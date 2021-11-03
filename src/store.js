@@ -1,21 +1,16 @@
-import { makeAutoObservable } from 'mobx'
+import { makeAutoObservable } from "mobx";
 
 class Store {
-  price = 1;
-  amount = 10;
-  constructor(){
-    makeAutoObservable(this); 
+  menu = {};
+  constructor() {
+    makeAutoObservable(this);
   }
 
-  get total() {
-    return this.price * this.amount;
-  }
-
-  changePrice() {
-    this.price ++
+  changeMenu(val) {
+    this.menu = val;
   }
 }
 
-const store  = new Store();
+const store = new Store();
 
 export default store;

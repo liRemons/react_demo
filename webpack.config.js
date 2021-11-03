@@ -17,7 +17,7 @@ module.exports = (env) => {
     entry: path.resolve(__dirname, 'src/main.jsx'),
     mode,
     output: {
-      filename: 'static/main.js',
+      filename: 'index.js',
       publicPath: '/',
       clean: true,
     },
@@ -51,7 +51,8 @@ module.exports = (env) => {
       extensions: ['.js', '.jsx'],
       alias: {
         '@': path.resolve(__dirname, 'src'),
-        '@components': path.resolve(__dirname, 'src/components')
+        '@components': path.resolve(__dirname, 'src/components'),
+        '@pages': path.resolve(__dirname, 'src/pages')
       }
     },
     externals: {
@@ -85,6 +86,7 @@ module.exports = (env) => {
       host: '127.0.0.1',
       open: true,
       hot: true,
+      historyApiFallback: true
     },
     devtool: mode === "development" ? "eval-source-map" : "eval",
   };
