@@ -35,7 +35,8 @@ function App() {
         </Menu>
       </Sider>
       <Layout>
-        <Header></Header>
+        <Header>
+        </Header>
         <Content>
           <Router menu={store.menu} />
         </Content>
